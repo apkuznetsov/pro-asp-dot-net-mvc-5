@@ -1,4 +1,4 @@
-using LanguageFeatures.Models;
+﻿using LanguageFeatures.Models;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -54,6 +54,30 @@ namespace LanguageFeatures.Controllers
             return View("Result",
                 (object)String.Format("Cart Total: {0}\nArray Total: {1}",
                 cartTotalPrice, productsArrTotalPrice));
+        }
+
+        public ViewResult UseFilterExtension()
+        {
+            IEnumerable<Product> products = new ShoppingCart
+            {
+                Products = new List<Product>
+                {
+                    new Product {Name = "Kayak", Price = 275M},
+                    new Product {Name = "Lifejacket", Price = 48.95M},
+                    new Product {Name = "Soccet ball", Price = 19.5M},
+                    new Product {Name = "Corner flag", Price = 34.95M},
+                }
+            };
+
+            decimal total = 0;
+
+            foreach (Product p in products.FilterByCategory("Soccer"))
+            {
+                total += p.Price;
+            }
+
+            return View("Result",
+                (object)String.Format("Total: {0}", total));
         }
     }
 }
