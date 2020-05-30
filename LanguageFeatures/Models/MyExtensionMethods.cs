@@ -14,5 +14,17 @@ namespace LanguageFeatures.Models
 
             return totalPrice;
         }
+
+        public static IEnumerable<Product> FilterByCategory(
+            this IEnumerable<Product> products, string category)
+        {
+            foreach (Product p in products)
+            {
+                if (p.Category == category)
+                {
+                    yield return p;
+                }
+            }
+        }
     }
 }
