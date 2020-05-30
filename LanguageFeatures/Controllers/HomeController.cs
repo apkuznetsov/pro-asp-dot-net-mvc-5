@@ -39,10 +39,21 @@ namespace LanguageFeatures.Controllers
                 }
             };
 
+            Product[] productsArr =
+
+                {
+                    new Product {Name = "Kayak", Price = 275M},
+                    new Product {Name = "Lifejacket", Price = 48.95M},
+                    new Product {Name = "Soccet ball", Price = 19.5M},
+                    new Product {Name = "Corner flag", Price = 34.95M},
+                };
+
             decimal cartTotalPrice = cart.TotalPrices();
+            decimal productsArrTotalPrice = productsArr.TotalPrices();
 
             return View("Result",
-                (object)String.Format("Total: {0:c}", cartTotalPrice));
+                (object)String.Format("Cart Total: {0}\nArray Total: {1}",
+                cartTotalPrice, productsArr));
         }
     }
 }
