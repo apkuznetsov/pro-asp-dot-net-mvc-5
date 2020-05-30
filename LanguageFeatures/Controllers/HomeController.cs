@@ -1,4 +1,4 @@
-﻿using LanguageFeatures.Models;
+using LanguageFeatures.Models;
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
@@ -53,7 +53,7 @@ namespace LanguageFeatures.Controllers
 
             return View("Result",
                 (object)String.Format("Cart Total: {0}\nArray Total: {1}",
-                cartTotalPrice, productsArr));
+                cartTotalPrice, productsArrTotalPrice));
         }
     }
 }
