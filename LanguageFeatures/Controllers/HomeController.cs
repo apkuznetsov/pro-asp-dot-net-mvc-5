@@ -1,7 +1,6 @@
-﻿using System;
+﻿using LanguageFeatures.Models;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace LanguageFeatures.Controllers
@@ -25,6 +24,25 @@ namespace LanguageFeatures.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ViewResult UseExtension()
+        {
+            ShoppingCart cart = new ShoppingCart
+            {
+                Products = new List<Product>
+                {
+                    new Product {Name = "Kayak", Price = 275M},
+                    new Product {Name = "Lifejacket", Price = 48.95M},
+                    new Product {Name = "Soccet ball", Price = 19.5M},
+                    new Product {Name = "Corner flag", Price = 34.95M},
+                }
+            };
+
+            decimal cartTotalPrice = cart.TotalPrices();
+
+            return View("Result",
+                (object)String.Format("Total: {0:c}", cartTotalPrice));
         }
     }
 }
