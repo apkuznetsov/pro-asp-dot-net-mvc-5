@@ -273,3 +273,17 @@ __pycache__/
 # tools/
 
 # End of https://www.gitignore.io/api/aspnetcore
+
+PartyInvites/PartyInvites/Content/bootstrap-theme.css
+PartyInvites/PartyInvites/Content/bootstrap-theme.min.css
+PartyInvites/PartyInvites/Content/bootstrap.css
+PartyInvites/PartyInvites/Content/bootstrap.min.css
+
+PartyInvites/PartyInvites/fonts/
+
+PartyInvites/PartyInvites/Scripts/bootstrap.js
+PartyInvites/PartyInvites/Scripts/bootstrap.min.js
+PartyInvites/PartyInvites/Scripts/jquery-1.9.0.intellisense.js
+PartyInvites/PartyInvites/Scripts/jquery-1.9.0.js
+PartyInvites/PartyInvites/Scripts/jquery-1.9.0.min.js
+PartyInvites/PartyInvites/Scripts/jquery-1.9.0.min.map
