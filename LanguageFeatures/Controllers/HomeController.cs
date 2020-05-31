@@ -1,6 +1,7 @@
 ﻿using LanguageFeatures.Models;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Web.Mvc;
 
 namespace LanguageFeatures.Controllers
@@ -79,6 +80,24 @@ namespace LanguageFeatures.Controllers
 
             return View("Result",
                 (object)String.Format("Total: {0}", total));
+        }
+
+        public ViewResult CreateAnonArray()
+        {
+            var oddsAndEnds = new[]
+            {
+                new { Name = "MVC", Category = "Pattern"},
+                new { Name = "Hat", Category = "Clothing"},
+                new { Name = "Apple", Category = "Fruit"},
+            };
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in oddsAndEnds)
+            {
+                sb.Append(item.Name).Append(" ");
+            }
+
+            return View("Result", (object)sb.ToString());
         }
     }
 }
