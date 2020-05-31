@@ -71,7 +71,8 @@ namespace LanguageFeatures.Controllers
 
             decimal total = 0;
 
-            foreach (Product p in products.FilterByCategory("Soccer"))
+            foreach (Product p in products.
+                Filter(p => p.Category == "Soccer" || p.Price > 20))
             {
                 total += p.Price;
             }

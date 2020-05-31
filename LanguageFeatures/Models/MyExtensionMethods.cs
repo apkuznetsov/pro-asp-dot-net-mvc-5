@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace LanguageFeatures.Models
 {
@@ -21,6 +22,19 @@ namespace LanguageFeatures.Models
             foreach (Product p in products)
             {
                 if (p.Category == category)
+                {
+                    yield return p;
+                }
+            }
+        }
+
+        public static IEnumerable<Product> Filter(
+            this IEnumerable<Product> products,
+            Func<Product, bool> selector)
+        {
+            foreach (Product p in products)
+            {
+                if (selector(p))
                 {
                     yield return p;
                 }
