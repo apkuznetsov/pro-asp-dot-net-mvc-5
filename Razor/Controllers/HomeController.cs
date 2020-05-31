@@ -1,4 +1,4 @@
-using Razor.Models;
+﻿using Razor.Models;
 using System.Web.Mvc;
 
 namespace Razor.Controllers
@@ -31,6 +31,11 @@ namespace Razor.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult NameAndPrice()
+        {
+            return View(myProduct);
         }
     }
 }
