@@ -7,9 +7,16 @@
 
     public class DefaultDiscounterHelper : IDiscountHelper
     {
+        private decimal discountSize;
+
+        public DefaultDiscounterHelper(decimal discountSize)
+        {
+            this.discountSize = discountSize;
+        }
+
         public decimal ApplyDiscount(decimal totalPrice)
         {
-            return (totalPrice - (10m / 100m * totalPrice));
+            return (totalPrice - (discountSize / 100m * totalPrice));
         }
     }
 }
