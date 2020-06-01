@@ -16,9 +16,9 @@ namespace EssentialTools.Controllers
             new Product {Name = "Corner flag", Category = "Soccer", Price = 34.95M},
         };
 
-        public HomeController(IValueCalculator calculator)
+        public HomeController(IValueCalculator calculator1, IValueCalculator calculator2)
         {
-            this.calculator = calculator;
+            this.calculator = calculator1;
         }
 
         public ActionResult Index()
