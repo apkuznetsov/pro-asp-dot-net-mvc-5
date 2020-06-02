@@ -35,5 +35,17 @@ namespace EssentialTools.Tests
             Assert.AreEqual(5, HundredDollarDiscount, "$100 dicount is wrong");
             Assert.AreEqual(45, FiftyDollarDiscount, "$50 dicount is wrong");
         }
+
+        [TestMethod]
+        public void Discount_Less_Than_10()
+        {
+            IDiscountHelper target = GetTestObject();
+
+            decimal discount5 = target.ApplyDiscount(5);
+            decimal discount0 = target.ApplyDiscount(0);
+
+            Assert.AreEqual(5, discount5);
+            Assert.AreEqual(0, discount0);
+        }
     }
 }
