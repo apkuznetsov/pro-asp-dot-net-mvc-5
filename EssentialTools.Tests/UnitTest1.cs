@@ -1,5 +1,6 @@
 ﻿using EssentialTools.Models;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 
 namespace EssentialTools.Tests
 {
@@ -46,6 +47,15 @@ namespace EssentialTools.Tests
 
             Assert.AreEqual(5, discount5);
             Assert.AreEqual(0, discount0);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void Discount_Negative_TotalPrice()
+        {
+            IDiscountHelper target = GetTestObject();
+
+            target.ApplyDiscount(-1);
         }
     }
 }
