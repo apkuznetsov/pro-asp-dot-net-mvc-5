@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace EssentialTools.Models
 {
@@ -9,7 +6,22 @@ namespace EssentialTools.Models
     {
         public decimal ApplyDiscount(decimal totalPrice)
         {
-            throw new NotImplementedException();
+            if (totalPrice < 0)
+            {
+                throw new ArgumentOutOfRangeException();
+            }
+            else if (totalPrice > 100)
+            {
+                return totalPrice * 0.9M;
+            }
+            else if (totalPrice >= 10 && totalPrice <= 100)
+            {
+                return totalPrice - 5;
+            }
+            else
+            {
+                return totalPrice;
+            }
         }
     }
 }
