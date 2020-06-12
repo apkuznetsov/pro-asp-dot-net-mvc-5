@@ -10,19 +10,10 @@ namespace DebuggingDemo.Controllers
     {
         public ActionResult Index()
         {
-            return View();
-        }
-
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
+            int firstVal = 10;
+            int secondVal = 5;
+            int result = firstVal / secondVal;
+            ViewBag.Message = "Welcome to ASP.NET MVC!";
 
             return View();
         }
